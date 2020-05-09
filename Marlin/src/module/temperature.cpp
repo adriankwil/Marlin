@@ -191,6 +191,8 @@ const char str_t_thermal_runaway[] PROGMEM = STR_T_THERMAL_RUNAWAY,
    */
   void Temperature::set_fan_speed(uint8_t target, uint16_t speed) {
 
+    speed = (255 - speed);
+
     NOMORE(speed, 255U);
 
     #if ENABLED(SINGLENOZZLE_STANDBY_FAN)
