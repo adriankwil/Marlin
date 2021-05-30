@@ -1,13 +1,10 @@
+#
+# buildroot/share/PlatformIO/scripts/STM32F103RC_fysetc.py
+#
+import os
 from os.path import join
 from os.path import expandvars
-Import("env", "projenv")
-
-# Relocate firmware from 0x08000000 to 0x08010000
-# for define in env['CPPDEFINES']:
-#    if define[0] == "VECT_TAB_ADDR":
-#        env['CPPDEFINES'].remove(define)
-#env['CPPDEFINES'].remove(("VECT_TAB_ADDR", 134217728))
-#env['CPPDEFINES'].append(("VECT_TAB_ADDR", "0x08010000"))
+Import("env")
 
 # Custom HEX from ELF
 env.AddPostAction(
