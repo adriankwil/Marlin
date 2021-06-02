@@ -323,6 +323,8 @@ const char str_t_thermal_runaway[] PROGMEM = STR_T_THERMAL_RUNAWAY,
 
     NOMORE(speed, 255U);
 
+    speed = (255-speed);
+
     #if ENABLED(SINGLENOZZLE_STANDBY_FAN)
       if (fan != active_extruder) {
         if (fan < EXTRUDERS) singlenozzle_fan_speed[fan] = speed;
